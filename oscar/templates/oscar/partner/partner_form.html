@@ -1,0 +1,9 @@
+supplier name: {{ supplier_name }}
+<br>
+product name: {{ product_name }}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>

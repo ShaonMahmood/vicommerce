@@ -1,0 +1,1481 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en" }}" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="keywords" content="">
+		<meta name="description" content="{% block description %}{% endblock %}">
+		<meta name="author" content="Vimmaniac Pvt Ltd">
+		<meta property="og:image" content="">
+		<meta property="og:type" content="">
+		<meta property="og:title" content="">
+		<meta property="og:description" content="">
+		<meta property="og:site_name" content="">
+		<meta property="og:url" content="">
+		<meta name="google-site-verification" content="">
+		<title>{% block title %}{{ shop_name }} - {{ shop_tagline }}{% endblock %}</title>
+        {% block favicon %}
+            <link rel="shortcut icon" href="{% static "oscar/favicon.ico" %}" />
+        {% endblock %}
+        {% block styles %}
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'styles/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'styles/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'styles/owl.carousel.min.css' %}">
+		<link rel="stylesheet" href="{% static 'styles/owl.theme.default.min.css' %}">
+		<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+        {% endblock styles %}
+        {% block extrastyles %}{% endblock %}
+        {% block tracking %}
+            {# Default to using Google analytics #}
+            {% include "partials/google_analytics.html" %}
+        {% endblock %}
+	</head>
+	<body id="{% block body_id %}body{% endblock %}" class="{% block body_class %}default{% endblock %}">
+		<div id="app">
+            {% block layout %}
+			<header>
+				<div id="div_swap">
+					<div class="header-top bg-light-2">
+						<div class="container">
+							<nav class="navbar navbar-expand-lg navbar-light p-0">
+								<div class="mr-auto navbar-brand font-13">Default welcome msg! &nbsp;<span><a href="#" class="color-main">Join Free &nbsp;</a></span><span>or &nbsp;</span><span><a href="#" class="color-main">Sign in</a></span></div>
+								<div>
+									<ul class="navbar-nav font-13">
+										<li class="nav-item"><a href="#" class="nav-link color-dark-2"><span class="pr-2"><i class="fa fa-lock"></i></span><span>Login</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link color-dark-2"><span class="pr-2"><i class="fa fa-user"></i></span><span>My Account</span></a></li>
+										<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle color-dark-2"><img src="img/en.png" class="d-inline-block pr-2"><span>English</span></a>
+											<div class="dropdown-menu"><a href="#" class="dropdown-item color-dark-2"><img src="img/en.png" class="d-inline-block pr-2"><span>French</span></a><a href="#" class="dropdown-item color-dark-2"><img src="img/en.png" class="d-inline-block pr-2"><span>Bengali</span></a></div>
+										</li>
+										<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle color-dark-2">USD</a>
+											<div class="dropdown-menu"><a href="#" class="dropdown-item">BDT</a><a href="#" class="dropdown-item">AUD</a></div>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<div class="header-mid bg-white py-md-3">
+						<div class="container">
+							<nav class="navbar navbar-expand-lg nav-light"><a href="#" class="navbar-brand"><img src="img/logo.png"></a>
+								<button type="button" data-toggle="collapse" data-target="#navbarToggleContent" aria-controls="navbarToggleContent" class="navbar-toggler p-2 rounded-circle border border-dark"><i class="fa fa-bars"></i></button>
+								<div id="navbarToggleContent" class="collapse navbar-collapse">
+									<div class="mx-auto">
+										<ul id="main_navbar" class="navbar-nav">
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">home<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">home-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">shop<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">shop-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">page<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">page-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">promo<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">promo-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">blog<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">blog-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+											<li class="nav-item dropdown-toggle-hover px-1"><a href="#" class="nav-link text-uppercase font-13 font-weight-bold">pages<span class="pl-1"><i class="fa fa-caret-down"></i></span></a>
+												<div class="dropdown-menu-hover transition">
+													<div class="d-flex bg-white py-4 px-3 dropdown-items">
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-00</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-01</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-02</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-03</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-10</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-11</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-12</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-13</a></li>
+														</ul>
+														<ul class="col pl-0 text-capitalize">
+															<li class="dropdown-item dropdown-heading">
+																<p class="mb-0 pb-2 font-weight-bold font-16 border-bottom text-uppercase">Item</p>
+															</li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-20</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-21</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-22</a></li>
+															<li class="py-2"><a href="#" class="dropdown-item font-13">pages-23</a></li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div id="top_contact" class="row">
+										<div class="float-left mr-3"><img src="img/icon-phone.png"></div>
+										<div>
+											<p class="font-13 mb-0"><span class="font-weight-bold">Call Us Now: &nbsp;</span><span><a href="" class="color-main">012-234-234-34</a></span></p>
+											<p class="font-13"><span>Email: &nbsp;</span><span><a href="mailto:ss@aa.cc" class="color-dark-2">ssss@sssss.com</a></span></p>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="header-bottom bg-main">
+					<div class="container">
+						<nav class="navbar navbar-expand-lg nav-danger py-0">
+							<button type="button" data-toggle="collapse" data-target="#navbarToggleContent2" aria-controls="navbarToggleContent2" class="navbar-toggler p-2 rounded-circle border border-dark"><i class="fa fa-bars"></i></button>
+							<div id="navbarToggleContent2" class="collapse navbar-collapse col-3 pl-0">
+								<div id="all-department" class="d-flex w-100"><a href="#" class="bg-dark-2 text-uppercase py-3 pl-3 text-white font-15 font-weight-bold w-100"><i class="fa fa-align-left"></i><span class="pl-2">all Department</span></a>
+									<ul class="pl-0 bg-white w-100 d-flex justify-content-around flex-column">
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 1</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 2</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 3</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 4</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 5</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 6</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 7</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 8</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item dropdown-toggle-hover px-3 d-flex align-items-center"><a href="#" class="nav-link w-100 color-dark-2 font-15"><span class="pr-2 color-dark-2 transition"><i class="fa fa-heart-o"></i></span><span class="font-weight-bold transition">Item 9</span><span class="float-right transition"><i class="fa fa-angle-right"></i></span></a>
+											<div class="dropdown-menu-hover transition">
+												<div class="d-flex justify-content-around dropdown-items bg-white px-3 py-4">
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 0-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 1-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 2-7</a></li>
+													</ul>
+													<ul class="sub-menu pl-0 text-capitalize">
+														<li class="dropdown-item dropdown-heading">
+															<p class="mb-0 pb-2 pr-5 font-weight-bold font-16 border-bottom text-uppercase">sub Category</p>
+														</li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-0</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-1</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-2</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-3</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-4</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-5</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-6</a></li>
+														<li class="py-2"><a href="#" class="dropdown-item font-13">Shop 3-7</a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mr-auto pl-5">
+								<form id="search_by_category_form" class="form-inline">
+									<div class="form-group">
+										<select class="form-control border-0 rounded-0 pl-0 bg-light-2 font-15">
+											<option>133333</option>
+											<option>2222ssaa</option>
+											<option>11111s1aa</option>
+											<option>1111sa</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<input type="text" placeholder="Search item" class="form-control border-0 rounded-0 font-15">
+									</div>
+									<button type="submit" class="btn bg-dark-2 rounded-0 text-white"><i class="fa fa-search"></i></button>
+								</form>
+							</div>
+							<div id="user_usage_links">
+								<ul class="navbar-nav">
+									<li class="nav-item"><a class="nav-link bg-white rounded-circle text-center mr-2"><i class="fa fa-heart-o"></i></a></li>
+									<li class="nav-item"><a class="nav-link bg-white rounded-circle text-center mr-2"><i class="fa fa-retweet"></i></a></li>
+									<li class="nav-item"><a class="nav-link bg-white rounded-circle text-center"><span><i class="fa fa-shopping-cart"></i></span><span class="badge badge-info rounded-circle">0</span></a></li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<section id="banner" class="bg-light-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3"></div>
+						<div class="col-md-6 px-md-0">
+							<div id="banner_slider" class="owl-carousel owl-theme inside-slider-nav">
+								<div class="item"><img src="img/banner-1.jpg" class="d-block w-100" style="height:526px"></div>
+								<div class="item"><img src="img/banner-2.jpg" class="d-block w-100" style="height:526px"></div>
+								<div class="item"><img src="img/banner-3.jpg" class="d-block w-100" style="height:526px"></div>
+							</div>
+						</div>
+						<div class="col-md-3 pl-md-0">
+							<aside id="promo_sidebar" class="h-100">
+								<ul class="pl-0 d-flex flex-column justify-content-around h-100">
+									<li class="flex-1"><a href="#"><img src="img/banner-sidebar-1.jpg"></a></li>
+									<li class="flex-1"><a href="#"><img src="img/banner-sidebar-2.jpg"></a></li>
+									<li class="flex-1"><a href="#"><img src="img/banner-sidebar-3.jpg"></a></li>
+								</ul>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="featured_categories" class="mt-4">
+				<div class="container">
+					<div class="px-3 heading">
+						<h2 class="text-uppercase border-bottom border-dark font-18 font-weight-bold py-2 mb-3">featured categories</h2>
+					</div>
+					<ul class="d-flex justify-content-around pl-0">
+						<li class="px-3"><a href=""><img src="img/featured-1.jpg">
+								<p class="text-center text-dark font-weight-bold text-uppercase font-15 py-2 border border-top-0">Fashion</p></a></li>
+						<li class="px-3"><a href=""><img src="img/featured-2.jpg">
+								<p class="text-center text-dark font-weight-bold text-uppercase font-15 py-2 border border-top-0">Fashion</p></a></li>
+						<li class="px-3"><a href=""><img src="img/featured-3.jpg">
+								<p class="text-center text-dark font-weight-bold text-uppercase font-15 py-2 border border-top-0">Fashion</p></a></li>
+						<li class="px-3"><a href=""><img src="img/featured-4.jpg">
+								<p class="text-center text-dark font-weight-bold text-uppercase font-15 py-2 border border-top-0">Fashion</p></a></li>
+						<li class="px-3"><a href=""><img src="img/featured-5.jpg">
+								<p class="text-center text-dark font-weight-bold text-uppercase font-15 py-2 border border-top-0">Fashion</p></a></li>
+					</ul>
+				</div>
+			</section>
+			<section id="all_deals">
+				<div class="container">
+					<div class="px-3">
+						<div class="row">
+							<div class="col-md-9">
+								<div class="daily_deals border px-3">
+									<div class="box-title">
+										<h3 class="font-18 text-white text-uppercase bg-main d-inline-block p-2">daily deals</h3>
+									</div>
+									<div id="daily_deal_slider" class="owl-carousel owl-theme no-slider-nav">
+										<div class="item">
+											<div class="each-daily_deal px-md-3 px-sm-3 py-5">
+												<div class="row">
+													<div class="col-sm-5"><a href="#"><img src="img/item-2.jpg"></a></div>
+													<div class="col-sm-7">
+														<div class="sale-off position-absolute">-50%</div>
+														<h3 class="font-18 font-weight-bold text-capitalize">Ut Labore Et</h3>
+														<ul class="review-stars pl-0 mr-2 d-flex float-left">
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+														</ul><span>0 Review(s)</span>
+														<hr class="mx-1">
+														<div class="small-description text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur delectus excepturi id maiores molestiae odio officiis, possimus saepe soluta.</div>
+														<div class="pricing font-weight-bold font-18 my-2"><span class="color-main">$200.00</span><span>
+																<strike>$599.00</strike></span></div>
+														<ul class="countdown pl-0 d-flex text-center text-uppercase">
+															<li>
+																<p class="days timenumbers">5</p>
+																<p class="text-secondary font-15">days</p>
+															</li>
+															<li>
+																<p class="hours timenumbers">12</p>
+																<p class="text-secondary font-15">hours</p>
+															</li>
+															<li>
+																<p class="minutes timenumbers">35</p>
+																<p class="text-secondary font-15">minutes</p>
+															</li>
+															<li>
+																<p class="seconds timenumbers">22</p>
+																<p class="text-secondary font-15">seconds</p>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="each-daily_deal px-md-3 px-sm-3 py-5">
+												<div class="row">
+													<div class="col-sm-5"><a href="#"><img src="img/item-1.jpg"></a></div>
+													<div class="col-sm-7">
+														<div class="sale-off position-absolute">-50%</div>
+														<h3 class="font-18 font-weight-bold text-capitalize">Ut Labore Et</h3>
+														<ul class="review-stars pl-0 mr-2 d-flex float-left">
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+														</ul><span>0 Review(s)</span>
+														<hr class="mx-1">
+														<div class="small-description text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur delectus excepturi id maiores molestiae odio officiis, possimus saepe soluta.</div>
+														<div class="pricing font-weight-bold font-18 my-2"><span class="color-main">$200.00</span><span>
+																<strike>$599.00</strike></span></div>
+														<ul class="countdown pl-0 d-flex text-center text-uppercase">
+															<li>
+																<p class="days timenumbers">5</p>
+																<p class="text-secondary font-15">days</p>
+															</li>
+															<li>
+																<p class="hours timenumbers">12</p>
+																<p class="text-secondary font-15">hours</p>
+															</li>
+															<li>
+																<p class="minutes timenumbers">35</p>
+																<p class="text-secondary font-15">minutes</p>
+															</li>
+															<li>
+																<p class="seconds timenumbers">22</p>
+																<p class="text-secondary font-15">seconds</p>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="item">
+											<div class="each-daily_deal px-md-3 px-sm-3 py-5">
+												<div class="row">
+													<div class="col-sm-5"><a href="#"><img src="img/item-3.jpg"></a></div>
+													<div class="col-sm-7">
+														<div class="sale-off position-absolute">-50%</div>
+														<h3 class="font-18 font-weight-bold text-capitalize">Ut Labore Et</h3>
+														<ul class="review-stars pl-0 mr-2 d-flex float-left">
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+															<li class="color-main pr-1"><i class="fa fa-star-o"></i></li>
+														</ul><span>0 Review(s)</span>
+														<hr class="mx-1">
+														<div class="small-description text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequatur delectus excepturi id maiores molestiae odio officiis, possimus saepe soluta.</div>
+														<div class="pricing font-weight-bold font-18 my-2"><span class="color-main">$200.00</span><span>
+																<strike>$599.00</strike></span></div>
+														<ul class="countdown pl-0 d-flex text-center text-uppercase">
+															<li>
+																<p class="days timenumbers">5</p>
+																<p class="text-secondary font-15">days</p>
+															</li>
+															<li>
+																<p class="hours timenumbers">12</p>
+																<p class="text-secondary font-15">hours</p>
+															</li>
+															<li>
+																<p class="minutes timenumbers">35</p>
+																<p class="text-secondary font-15">minutes</p>
+															</li>
+															<li>
+																<p class="seconds timenumbers">22</p>
+																<p class="text-secondary font-15">seconds</p>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="bottom_daily_deal_slider" class="owl-carousel owl-theme no-slider-nav text-center">
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-1.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-2.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-3.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-4.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-5.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-6.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-7.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+										<div class="item">
+											<div class="each-bottom-daily-deal"><a href="#" class="text-center">
+													<div class="sale-off">-50%</div>
+													<div class="img-wrapper p-4 border rounded"><img src="img/item-8.jpg" class="mx-auto"></div>
+													<p>Something</p></a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="best-sellers h-100 d-flex align-items-stretch">
+									<h3 class="bg-light-2 font-18 font-weight-bold p-3"><i class="fa fa-diamond color-main font-weight-bold mr-2"></i><span class="text-uppercase">best sellers</span></h3>
+									<ul class="d-flex flex-column flex-1 pl-0">
+										<li class="border flex-1 h-100 px-3">
+											<div class="row h-100">
+												<div class="col-3 d-flex justify-content-center flex-column"><a href="#"><img src="img/item-1.jpg"></a></div>
+												<div class="col-9 d-flex justify-content-center flex-column"><a href="#">Underwear</a>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+											</div>
+										</li>
+										<li class="border flex-1 h-100 px-3">
+											<div class="row h-100">
+												<div class="col-3 d-flex justify-content-center flex-column"><a href="#"><img src="img/item-2.jpg"></a></div>
+												<div class="col-9 d-flex justify-content-center flex-column"><a href="#">Underwear</a>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+											</div>
+										</li>
+										<li class="border flex-1 h-100 px-3">
+											<div class="row h-100">
+												<div class="col-3 d-flex justify-content-center flex-column"><a href="#"><img src="img/item-3.jpg"></a></div>
+												<div class="col-9 d-flex justify-content-center flex-column"><a href="#">Underwear</a>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+											</div>
+										</li>
+										<li class="border flex-1 h-100 px-3">
+											<div class="row h-100">
+												<div class="col-3 d-flex justify-content-center flex-column"><a href="#"><img src="img/item-4.jpg"></a></div>
+												<div class="col-9 d-flex justify-content-center flex-column"><a href="#">Underwear</a>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="promo" class="mt-4">
+				<div class="container">
+					<div class="px-3">
+						<div class="row">
+							<div class="col-md-6"><a href="#"><img src="img/promo-1.jpg"></a></div>
+							<div class="col-md-6"><a href="#"><img src="img/promo-2.jpg"></a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="fashion" class="mt-4">
+				<div class="container">
+					<div class="px-3">
+						<div class="row">
+							<div class="col-md-2 pr-md-0">
+								<h3 href="#" class="text-uppercase font-weight-bold font-18 text-white px-3 py-1 mb-0">faashion</h3>
+							</div>
+							<div class="col-md-10 pl-md-0">
+								<nav class="navbar navbar-expand-lg navbar-light bg-light">
+									<button type="button" data-toggle="collapse" data-target="#fashion_navbar" aria-controls="fashion_navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+									<div id="fashion_navbar" class="collapse navbar-collapse">
+										<ul id="myTab" role="tablist" class="nav nav-tabs">
+											<li class="nav-item"><a data-toggle="tab" href="#" class="active nav-link text-uppercase">product_tab_11</a>
+												<!--	a.active.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												<!--	a.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												
+											</li>
+											<li class="nav-item"><a data-toggle="tab" href="#" class="nav-link text-uppercase">product_tab_12</a>
+												<!--	a.active.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												<!--	a.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												
+											</li>
+											<li class="nav-item"><a data-toggle="tab" href="#" class="nav-link text-uppercase">product_tab_13</a>
+												<!--	a.active.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												<!--	a.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												
+											</li>
+											<li class="nav-item"><a data-toggle="tab" href="#" class="nav-link text-uppercase">product_tab_14</a>
+												<!--	a.active.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												<!--	a.nav-link.text-uppercase(data-toggle="tab", href="##{item}", role="tab", aria-controls="#{item}", aria-selected="true")=item-->
+												
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</div>
+						</div>
+					</div>
+					<div class="products-showdown px-3">
+						<div class="row">
+							<aside class="col-md-2 pr-md-0"><a href="#" class="fake-anchor"><img style="width: 100%;margin-top: -2px;" src="img/fashion.jpg"></a></aside>
+							<div class="col-md-10 pl-md-0">
+								<div class="tab-content mt-4">
+									<div id="prod_by_cat_slider" class="owl-carousel owl-theme products-by-category">
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-1.jpg">
+													<p class="prod-name my-1">Pajama: 0-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-2.jpg">
+													<p class="prod-name my-1">Pajama: 0-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-3.jpg">
+													<p class="prod-name my-1">Pajama: 1-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-4.jpg">
+													<p class="prod-name my-1">Pajama: 1-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-5.jpg">
+													<p class="prod-name my-1">Pajama: 2-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-6.jpg">
+													<p class="prod-name my-1">Pajama: 2-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-7.jpg">
+													<p class="prod-name my-1">Pajama: 3-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-8.jpg">
+													<p class="prod-name my-1">Pajama: 3-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-9.jpg">
+													<p class="prod-name my-1">Pajama: 4-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-10.jpg">
+													<p class="prod-name my-1">Pajama: 4-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-11.jpg">
+													<p class="prod-name my-1">Pajama: 5-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-13.jpg">
+													<p class="prod-name my-1">Pajama: 5-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-3.jpg">
+													<p class="prod-name my-1">Pajama: 6-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-8.jpg">
+													<p class="prod-name my-1">Pajama: 6-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+										<div class="items">
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-5.jpg">
+													<p class="prod-name my-1">Pajama: 7-0</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+											<div class="cursor-pointer text-center each-product-by-category position-relative border">
+												<div class="prod-img px-3 py-4 position-relativ">
+													<div class="sale-off position-absolute">-21%</div><img src="img/item-2.jpg">
+													<p class="prod-name my-1">Pajama: 7-1</p>
+													<div class="pricing font-15 font-weight-bold"><span class="color-main">$200.00</span><span>
+															<strike>$599.00</strike></span></div>
+												</div>
+												<div class="prod-hover text-center"><a href="#" class="bg-main text-white rounded-circle icon-btn fix-height position-absolute lightbox-btn transition horizontal-center"><i class="fa fa-eye"></i></a>
+													<div class="prod-btm-items position-absolute transition w-100"><a href="#" class="bg-main text-white text-capitalize font-13 cart-btn fix-height">Add to cart</a><a href="#" class="color-main border rounded-circle icon-btn fix-height mx-1"><i class="fa fa-heart-o"></i></a><a href="#" class="color-main border rounded-circle icon-btn fix-height"><i class="fa fa-retweet"></i></a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- our customer-->
+			<!--section
+			.container
+				#customer_slider
+			-->
+			<footer>
+				<div id="footer_feature" class="bg-main">
+					<div class="container">
+						<div class="px-3">
+							<div class="row text-white py-4">
+								<div class="each-feat col position-relative text-center"><span class="feat-icon"><i class="fa fa-cab"></i></span>
+									<div class="d-inline-block ml-3 font-13 feat-desc">
+										<p class="mb-0 text-uppercase font-weight-bold">cash on dev</p>
+										<p class="mb-0">from 221B baker street</p>
+									</div>
+								</div>
+								<div class="each-feat col position-relative text-center"><span class="feat-icon"><i class="fa fa-cab"></i></span>
+									<div class="d-inline-block ml-3 font-13 feat-desc">
+										<p class="mb-0 text-uppercase font-weight-bold">cash on dev</p>
+										<p class="mb-0">from 221B baker street</p>
+									</div>
+								</div>
+								<div class="each-feat col position-relative text-center"><span class="feat-icon"><i class="fa fa-cab"></i></span>
+									<div class="d-inline-block ml-3 font-13 feat-desc">
+										<p class="mb-0 text-uppercase font-weight-bold">cash on dev</p>
+										<p class="mb-0">from 221B baker street</p>
+									</div>
+								</div>
+								<div class="each-feat col position-relative text-center"><span class="feat-icon"><i class="fa fa-cab"></i></span>
+									<div class="d-inline-block ml-3 font-13 feat-desc">
+										<p class="mb-0 text-uppercase font-weight-bold">cash on dev</p>
+										<p class="mb-0">from 221B baker street</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="footer_link_group" class="bg-light-2 pt-5 pb-3">
+					<div class="container">
+						<div class="px-3">
+							<div class="row">
+								<div class="col-md-2 shop-links">
+									<h4 class="text-uppercase font-weight-bold">our shops</h4>
+									<ul class="navbar-nav font-13 text-capitalize">
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-2 shop-links">
+									<h4 class="text-uppercase font-weight-bold">our shops</h4>
+									<ul class="navbar-nav font-13 text-capitalize">
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-2 shop-links">
+									<h4 class="text-uppercase font-weight-bold">our shops</h4>
+									<ul class="navbar-nav font-13 text-capitalize">
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-2 shop-links">
+									<h4 class="text-uppercase font-weight-bold">our shops</h4>
+									<ul class="navbar-nav font-13 text-capitalize">
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+										<li class="nav-item"><a href="#" class="nav-link text-secondary transition"><span class="pr-2"><i class="fa fa-angle-right"></i></span><span>product support</span></a></li>
+									</ul>
+								</div>
+								<div class="col-md-4 contact">
+									<h4 class="text-uppercase font-weight-bold">contact us</h4>
+									<ul class="navbar-nav">
+										<li class="nav-item mb-2"><i class="fa fa-map-marker fix-height bg-secondary text-center text-white float-left mr-2"></i><span class="font-13">Address: 221B baker street, london, England or United Kingdom, World, Universe.</span></li>
+										<li class="nav-item mb-2"><i class="fa fa-envelope-o fix-height bg-secondary text-center text-white float-left mr-2"></i><span class="font-13">Email: asss.ssss.ssss</span></li>
+										<li class="nav-item mb-2"><i class="fa fa-phone fix-height bg-secondary text-center text-white float-left mr-2"></i><span class="font-13">
+												phone: 9248484848484
+												Phon2: uwuw8888</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="footer_copyright" class="bg-dark-2 py-4 text-center">
+					<div class="container">
+						<p class="text-secondary font-13 mb-0"><span>©2018 WordPress Theme SW Revo. All Rights Reserved. Designed by &nbsp;</span><span><a href="#" class="color-main">WPThemeGo.Com.</a></span></p>
+					</div>
+				</div>
+			</footer>
+            {% endblock %}
+		</div>
+        {% block scripts %}
+		<script src="{% static 'js/00.jquery-3.2.1.min.js' %}"></script>
+		<script src="{% static 'js/01.popper.min.js' %}"></script>
+		<script src="{% static 'js/03.bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/04.owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+        {% endblock scripts %}
+        {% block extrascripts %}{% endblock %}
+        {# Block for body onload functions #}
+        <script>
+            $(function() {
+                {% block onbodyload %}{% endblock %}
+            });
+        </script>
+	</body>
+</html>
